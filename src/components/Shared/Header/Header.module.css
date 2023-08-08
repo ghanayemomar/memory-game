@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    font-size: 50px;
+    background-color: #2b3945;
+}

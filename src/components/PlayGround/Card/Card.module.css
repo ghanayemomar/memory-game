@@ -1,0 +1,44 @@
+.card {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #2b3945;
+    border-radius: 20px;
+}
+
+.x,
+.randomNumber {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 100px;
+    transition: all .8s ease;
+    backface-visibility: hidden;
+    overflow: hidden;
+    padding-bottom: 25px;
+    font-weight: 100;
+}
+
+.x {
+    transform: rotateY(0deg);
+}
+
+.randomNumber {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .x {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .randomNumber {
+    transform: rotateY(0deg);
+}

@@ -1,0 +1,31 @@
+.PlayTurnContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 0 3rem;
+
+}
+
+h2 {
+    padding: .5rem;
+    border-radius: .5rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background-color: #2b3945;
+}
+
+.active {
+    border: 2px solid;
+
+}
+
+@media (max-width: 550px) {
+    .PlayTurnContainer {
+        justify-content: center;
+    }
+}
