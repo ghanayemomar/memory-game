@@ -8,18 +8,13 @@ const CardContainer = ({ onPlayerChange, player }) => {
   const navigate = useNavigate();
 
   const [cards, setCards] = useState([]);
-
   const [flippedCards, setFlippedCards] = useState([]);
-
   const [matchedCards, setMatchedCards] = useState([]);
-
   const [history, setHistory] = useState([]);
-
-  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     let cards = [];
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 3; i++) {
       cards.push(i, i);
     }
     cards.sort(() => Math.random() - 0.5);
@@ -50,14 +45,6 @@ const CardContainer = ({ onPlayerChange, player }) => {
       if (cards[card1] === cards[card2]) {
         setMatchedCards((prev) => [...prev, card1, card2]);
         updateHistory(card1, card2, true);
-        setCounter(counter + 1);
-        if (counter === 8) {
-          const data = {
-            winData: getWinner(history),
-            history: history,
-          };
-          navigate("/ResultPage", { state: data });
-        }
       } else {
         updateHistory(card1, card2, false);
       }
@@ -67,6 +54,16 @@ const CardContainer = ({ onPlayerChange, player }) => {
       }, 1000);
     }
   }, [flippedCards]);
+
+  useEffect(() => {
+    if (matchedCards.length === 6) {
+      const data = {
+        winData: getWinner(history),
+        history: history,
+      };
+      navigate("/ResultPage", { state: data });
+    }
+  }, [history, matchedCards]);
 
   return (
     <div className={classes.CardContainer}>
