@@ -1,4 +1,5 @@
 export const getWinner = (playersData) => {
+
   const scores = playersData.reduce((acc, curr) => {
     if (curr.success) {
       if (acc[curr.playerName]) {
